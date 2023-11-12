@@ -21,6 +21,7 @@ class HourlyDataContainer extends StatelessWidget {
       ),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
         itemCount: hourlyData.length,
         itemBuilder: (context, index) => SingleHourDataWidget(
           hourData: hourlyData[index],

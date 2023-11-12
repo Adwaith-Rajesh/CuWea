@@ -1,9 +1,10 @@
-import 'dart:ui';
-
 import 'package:cuwea/components/current_condition.dart';
+import 'package:cuwea/components/cuwea_logo.dart';
+import 'package:cuwea/components/forecast_data_container.dart';
 import 'package:cuwea/components/hourly_data_container.dart';
 import 'package:cuwea/components/info_glance.dart';
 import 'package:cuwea/components/search_bar.dart';
+import 'package:cuwea/models/forecast_data.dart';
 import 'package:cuwea/models/hour_data.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_icons/weather_icons.dart';
@@ -60,6 +61,27 @@ class _HomePageState extends State<HomePage> {
         iconData: WeatherIcons.day_sunny_overcast),
   ];
 
+  final List<ForecastData> forecastData = [
+    ForecastData(
+        weekDay: 'Today',
+        humidity: 23,
+        precipitation: 1,
+        maxTemp: 23,
+        minTemp: 20),
+    ForecastData(
+        weekDay: 'Monday',
+        humidity: 23,
+        precipitation: 1,
+        maxTemp: 23,
+        minTemp: 20),
+    ForecastData(
+        weekDay: 'Tuesday',
+        humidity: 23,
+        precipitation: 1,
+        maxTemp: 23,
+        minTemp: 20),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -92,6 +114,7 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
               children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // info at a glance
                     const InfoGlance(
@@ -102,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                     const SizedBox(
-                      height: 15,
+                      height: 25,
                     ),
 
                     // hourly data container
@@ -113,8 +136,26 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                     // quotes
-                    CurrentCondition(
-                        conditionText: 'It\'s Sunny Today. Go out and enjoy.'),
+                    const CurrentCondition(
+                      conditionText: 'It\'s Sunny Today. Go out and enjoy.',
+                    ),
+
+                    const SizedBox(
+                      height: 15,
+                    ),
+
+                    // forecast
+                    ForecastDataContainer(forecastData: forecastData),
+
+                    const SizedBox(
+                      height: 15,
+                    ),
+
+                    Divider(
+                      color: Colors.grey[400],
+                    ),
+
+                    const CuWeaLogo(),
                   ],
                 ),
               ],

@@ -13,7 +13,7 @@ class SingleHourDataWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 15),
+      margin: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -24,7 +24,7 @@ class SingleHourDataWidget extends StatelessWidget {
           ),
           Icon(
             hourData.iconData,
-            color: Color.fromARGB(255, 51, 90, 233).withOpacity(0.7),
+            color: const Color.fromARGB(255, 51, 90, 233).withOpacity(0.7),
           ),
           CWText(
             text: '${hourData.temp.toString()}°',
@@ -36,7 +36,7 @@ class SingleHourDataWidget extends StatelessWidget {
               Icon(
                 Icons.water_drop,
                 size: 12,
-                color: Color(0xffF6F8FF).withOpacity(0.7),
+                color: const Color(0xffF6F8FF).withOpacity(0.7),
               ),
               CWText(
                 text: '${hourData.precipitation.toString()}%',
