@@ -85,6 +85,8 @@ flutter:
           weight: 400
         - asset: fonts/Poppins-SemiBold.ttf
           weight: 600
+        - asset: fonts/Poppins-Thin.ttf
+          weight: 300
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf

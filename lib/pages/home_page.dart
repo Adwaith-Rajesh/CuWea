@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:cuwea/components/info_glance.dart';
 import 'package:cuwea/components/search_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -37,8 +38,18 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           backgroundColor: Colors.transparent,
-          body: Center(
-            child: Text(_submitText),
+          body: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                InfoGlance(
+                  temp: 30,
+                  feelsLike: 22,
+                  city: 'Kakkad',
+                  dateTime: 'Sun, 11:07',
+                ),
+              ],
+            ),
           ),
         ),
       ),
