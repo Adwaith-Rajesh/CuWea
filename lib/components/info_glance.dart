@@ -1,5 +1,6 @@
 import 'package:cuwea/components/cw_text.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_icons/weather_icons.dart';
 
 class InfoGlance extends StatelessWidget {
   final int temp;
@@ -41,11 +42,18 @@ class InfoGlance extends StatelessWidget {
               ],
             ),
 
-            const Icon(
-              Icons.sunny,
-              size: 128,
-              color: Colors.white,
-            )
+            const Row(
+              children: [
+                Icon(
+                  WeatherIcons.day_sunny,
+                  size: 128,
+                  color: Colors.white,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+              ],
+            ),
           ],
         ),
 
