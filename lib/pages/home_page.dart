@@ -68,8 +68,8 @@ class _HomePageState extends State<HomePage> {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color(0xff5C79B3),
-            Color(0xffB0C3F0),
+            Color.fromARGB(255, 76, 110, 179),
+            Color.fromARGB(255, 144, 172, 238),
           ],
         ),
       ),
@@ -113,7 +113,8 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                     // quotes
-                    CurrentCondition(),
+                    CurrentCondition(
+                        conditionText: 'It\'s Sunny Today. Go out and enjoy.'),
                   ],
                 ),
               ],
