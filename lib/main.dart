@@ -1,7 +1,13 @@
 import 'package:cuwea/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+import 'package:cuwea/core/get_weather_data.dart';
+
+void main() async {
+  await Hive.initFlutter();
+
+  // var box = Hive.openBox('cuwea_box');
   runApp(const MyApp());
 }
 

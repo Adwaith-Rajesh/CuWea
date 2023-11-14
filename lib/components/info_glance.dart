@@ -1,12 +1,12 @@
 import 'package:cuwea/components/cw_text.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_icons/weather_icons.dart';
 
 class InfoGlance extends StatelessWidget {
   final int temp;
   final int feelsLike;
   final String city;
   final String dateTime;
+  final IconData icon;
 
   const InfoGlance({
     super.key,
@@ -14,6 +14,7 @@ class InfoGlance extends StatelessWidget {
     required this.feelsLike,
     required this.city,
     required this.dateTime,
+    required this.icon,
   });
 
   @override
@@ -42,14 +43,14 @@ class InfoGlance extends StatelessWidget {
               ],
             ),
 
-            const Row(
+            Row(
               children: [
                 Icon(
-                  WeatherIcons.day_sunny,
+                  icon,
                   size: 128,
                   color: Colors.white,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
               ],
