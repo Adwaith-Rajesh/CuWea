@@ -3,7 +3,6 @@ import 'package:cuwea/models/forecast_data.dart';
 import 'package:cuwea/models/hour_data.dart';
 import 'package:cuwea/models/weather_data.dart';
 import 'package:cuwea/core/env.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:weather_icons/weather_icons.dart';
 import 'dart:convert';
@@ -83,7 +82,7 @@ var sampleCurrentData = CurrentData(
 );
 
 Future<WeatherData> getWeatherData(String location) async {
-  var currentWeatherUri = Uri.https(
+  var currentWeatherUri = Uri.http(
     'api.weatherapi.com',
     'v1/current.json',
     {
@@ -95,7 +94,7 @@ Future<WeatherData> getWeatherData(String location) async {
     },
   );
 
-  var forecastWeatherUri = Uri.https(
+  var forecastWeatherUri = Uri.http(
     'api.weatherapi.com',
     'v1/forecast.json',
     {
@@ -128,13 +127,11 @@ Future<WeatherData> getWeatherData(String location) async {
       iconData: WeatherIcons.day_sunny,
     );
 
-    // conditionText =
-    //     currentJsonData['forecast']['forecastday'][0]['condition']['text'];
+    conditionText = currentJsonData['current']['condition']['text'];
   }
 
   // 3 day forecast and the hourly data for the day
   var forecastResponce = await http.get(forecastWeatherUri);
-  print(forecastResponce.statusCode);
 
   return WeatherData(
       forecastData: sampleForecastData,

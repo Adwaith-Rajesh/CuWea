@@ -2,8 +2,6 @@ import 'package:cuwea/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'package:cuwea/core/get_weather_data.dart';
-
 void main() async {
   await Hive.initFlutter();
 
