@@ -1,11 +1,13 @@
 import 'package:cuwea/components/current_condition.dart';
 import 'package:cuwea/components/cuwea_logo.dart';
+import 'package:cuwea/components/drawer_child.dart';
 import 'package:cuwea/components/forecast_data_container.dart';
 import 'package:cuwea/components/hourly_data_container.dart';
 import 'package:cuwea/components/info_glance.dart';
 import 'package:cuwea/components/search_bar.dart';
 import 'package:cuwea/core/get_weather_data.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,6 +27,11 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  Future<void> openGHSourcePage() async {
+    await launchUrl(Uri.parse('https://github.com/Adwaith-Rajesh/CuWea'),
+        mode: LaunchMode.externalApplication);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,7 +47,9 @@ class _HomePageState extends State<HomePage> {
       ),
       child: SafeArea(
         child: Scaffold(
-          drawer: Drawer(),
+          drawer: Drawer(
+            child: DrawerChild(),
+          ),
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0.0,
@@ -51,6 +60,19 @@ class _HomePageState extends State<HomePage> {
                 });
               },
             ),
+            actions: [
+              GestureDetector(
+                onTap: () {
+                  openGHSourcePage();
+                },
+                child: Container(
+                    padding: const EdgeInsets.only(right: 10, left: 10),
+                    child: const Icon(
+                      Icons.code_sharp,
+                      size: 25,
+                    )),
+              ),
+            ],
           ),
           backgroundColor: Colors.transparent,
           body: Padding(
