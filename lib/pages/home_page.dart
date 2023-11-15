@@ -40,6 +40,7 @@ class _HomePageState extends State<HomePage> {
       ),
       child: SafeArea(
         child: Scaffold(
+          drawer: Drawer(),
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0.0,
@@ -60,13 +61,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // info at a glance
-                    InfoGlance(
-                      temp: weatherData.currentData.temp,
-                      feelsLike: weatherData.currentData.feelsLike,
-                      city: weatherData.currentData.city,
-                      dateTime: weatherData.currentData.date,
-                      iconImagePath: weatherData.currentData.iconImagePath,
-                    ),
+                    InfoGlance(currentData: weatherData.currentData),
 
                     const SizedBox(
                       height: 25,
