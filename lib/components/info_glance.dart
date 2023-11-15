@@ -6,7 +6,7 @@ class InfoGlance extends StatelessWidget {
   final int feelsLike;
   final String city;
   final String dateTime;
-  final IconData icon;
+  final String iconImagePath;
 
   const InfoGlance({
     super.key,
@@ -14,7 +14,7 @@ class InfoGlance extends StatelessWidget {
     required this.feelsLike,
     required this.city,
     required this.dateTime,
-    required this.icon,
+    required this.iconImagePath,
   });
 
   @override
@@ -45,10 +45,13 @@ class InfoGlance extends StatelessWidget {
 
             Row(
               children: [
-                Icon(
-                  icon,
-                  size: 128,
-                  color: Colors.white,
+                Container(
+                  width: 160,
+                  height: 160,
+                  child: Image.asset(
+                    iconImagePath,
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 const SizedBox(
                   width: 10,

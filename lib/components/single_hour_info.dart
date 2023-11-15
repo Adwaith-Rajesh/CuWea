@@ -22,10 +22,7 @@ class SingleHourDataWidget extends StatelessWidget {
             fontSize: 14,
             fontWeight: FontWeight.normal,
           ),
-          Icon(
-            hourData.iconData,
-            color: const Color.fromARGB(255, 51, 90, 233).withOpacity(0.7),
-          ),
+          Image.asset(hourData.iconImagePath),
           CWText(
             text: '${hourData.temp.toString()}°',
             fontSize: 16,

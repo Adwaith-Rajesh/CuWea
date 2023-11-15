@@ -33,8 +33,8 @@ class _HomePageState extends State<HomePage> {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color.fromARGB(255, 76, 110, 179),
-            Color.fromARGB(255, 144, 172, 238),
+            Color.fromARGB(255, 72, 110, 187),
+            Color.fromARGB(255, 233, 129, 69),
           ],
         ),
       ),
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                       feelsLike: weatherData.currentData.feelsLike,
                       city: weatherData.currentData.city,
                       dateTime: weatherData.currentData.date,
-                      icon: weatherData.currentData.iconData,
+                      iconImagePath: weatherData.currentData.iconImagePath,
                     ),
 
                     const SizedBox(
