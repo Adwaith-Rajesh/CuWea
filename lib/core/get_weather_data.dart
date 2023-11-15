@@ -183,6 +183,8 @@ Future<WeatherData> getWeatherData(String location) async {
             _doubleToInt(threeDayForecast[i]['day']['mintemp_c'].toString()),
       ));
     }
+
+    forecastData[0].weekDay = 'Today';
   }
 
   return WeatherData(
