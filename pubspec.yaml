@@ -72,6 +72,7 @@ flutter:
     - assets/images/
     - assets/images/owm/2x/
     - assets/images/owm/4x/
+    - assets/images/github-logo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
