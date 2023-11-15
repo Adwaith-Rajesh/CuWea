@@ -10,6 +10,13 @@ class InfoGlance extends StatelessWidget {
     required this.currentData,
   });
 
+  String getShrinkCityName(BuildContext context, String cityName) {
+    if (cityName.length < 15) return cityName;
+    return MediaQuery.of(context).orientation == Orientation.landscape
+        ? cityName
+        : cityName.replaceRange(15, currentData.city.length, '...');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,7 +36,7 @@ class InfoGlance extends StatelessWidget {
                   fontWeight: FontWeight.w300,
                 ),
                 CWText(
-                  text: currentData.city,
+                  text: getShrinkCityName(context, currentData.city),
                   fontSize: 24,
                   fontWeight: FontWeight.normal,
                 ),
@@ -46,9 +53,9 @@ class InfoGlance extends StatelessWidget {
                     fit: BoxFit.fill,
                   ),
                 ),
-                const SizedBox(
-                  width: 10,
-                ),
+                // const SizedBox(
+                //   width: 0,
+                // ),
               ],
             ),
           ],
