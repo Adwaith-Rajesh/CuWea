@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
       ),
       child: SafeArea(
         child: Scaffold(
-          drawer: Drawer(
+          drawer: const Drawer(
             child: DrawerChild(),
           ),
           appBar: AppBar(
@@ -66,11 +66,12 @@ class _HomePageState extends State<HomePage> {
                   openGHSourcePage();
                 },
                 child: Container(
-                    padding: const EdgeInsets.only(right: 10, left: 10),
-                    child: const Icon(
-                      Icons.code_sharp,
-                      size: 25,
-                    )),
+                  padding: const EdgeInsets.only(right: 10, left: 10),
+                  child: const Icon(
+                    Icons.code_sharp,
+                    size: 25,
+                  ),
+                ),
               ),
             ],
           ),
